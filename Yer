@@ -82,5 +82,6 @@ def program():
         program()
     option1()
 
-
+print('Thanks for using my code')
+print('')
 program()
