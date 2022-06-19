@@ -1,0 +1,60 @@
+def add(x, y):
+    return x + y
+
+
+def subtract(x, y):
+    return x - y
+
+
+def multiply(x, y):
+    return x * y
+
+
+def divide(x, y):
+    return x / y
+
+
+def program():
+    choice = input('Choice(1 or 2):')
+    num: float = float(choice)
+    if num == 1:
+        print('Mad Libs story')
+        first = input('Color:')
+        second = input('Your Name:')
+        third = input('Animal:')
+        forth = input('2nd name:')
+        fifth = input('Weapon:')
+        sixth = input('Famous Person:')
+        print('Once, on a beautiful {0} day, the Hero {1} appeared. '.format(first, second))
+        print('He was called to action because a wild {0} was wreaking havoc on the local bank.'.format(third))
+        print('This wild {0} was being controlled by the evil wizard {1}. '.format(third, forth))
+        print('Luckily, {0} chucked his magical {1}, defeating the {2}.'.format(second, fifth, third))
+        print('Then {0} appeared, giving a kiss to {1}, as a welcome for saving the day.'.format(sixth, second))
+        print('')
+        option = input("Want to go again(Yes, No):")
+        if option == 'Yes':
+            program()
+        if option == 'No':
+            print('Have a good day')
+            exit()
+    if num == 2:
+        print('Calculator')
+        first = input('Number 1:')
+        two = input('Number 2:')
+        opt = input('Operator(+ add, - subtract, / divide, * multiply):')
+        if opt == '+':
+            print(add(float(first), float(two)))
+        elif opt == '*':
+            print(multiply(float(first), float(two)))
+        elif opt == '/':
+            print(divide(float(first), float(two)))
+        elif opt == '-':
+            print(subtract(float(first), float(two)))
+        print('')
+        option = input("Want to go again(Yes, No):")
+        if option == 'Yes':
+            program()
+        if option == 'No':
+            print('Have a good day')
+            exit()
+program()
