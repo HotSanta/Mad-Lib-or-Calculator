@@ -10,14 +10,47 @@ def multiply(x, y):
     return x * y
 
 
+def calc():
+    first = input('Number 1:')
+    two = input('Number 2:')
+    opt = input('Operator(+ add, - subtract, / divide, * multiply):')
+    if opt == '+':
+        print(add(float(first), float(two)))
+    elif opt == '*':
+        print(multiply(float(first), float(two)))
+    elif opt == '/':
+        print(divide(float(first), float(two)))
+    elif opt != '+' or opt != '*' or opt != '/' or opt != '-':
+        print('')
+        print('Please Choose a valid operator')
+        print('')
+        calc()
+    elif opt == '-':
+        print(subtract(float(first), float(two)))
+    print('')
+
+
 def divide(x, y):
     return x / y
 
 
+def option1():
+    option = input("Want to go again(Yes, No):")
+    if option == 'Yes':
+        program()
+    if option == 'No':
+        print('Have a good day')
+        exit()
+    elif option != 'Yes' or option != 'No':
+        print('')
+        print('Please Choose Yes or No')
+        print('')
+        option1()
+
+
 def program():
-    choice = input('Choice(1 or 2):')
-    num: float = float(choice)
-    if num == 1:
+    choice = input('Choice(MadLibs or Calculator):')
+    if choice == 'MadLibs':
         print('Mad Libs story')
         first = input('Color:')
         second = input('Your Name:')
@@ -37,24 +70,17 @@ def program():
         if option == 'No':
             print('Have a good day')
             exit()
-    if num == 2:
+    elif choice == 'Calculator':
         print('Calculator')
-        first = input('Number 1:')
-        two = input('Number 2:')
-        opt = input('Operator(+ add, - subtract, / divide, * multiply):')
-        if opt == '+':
-            print(add(float(first), float(two)))
-        elif opt == '*':
-            print(multiply(float(first), float(two)))
-        elif opt == '/':
-            print(divide(float(first), float(two)))
-        elif opt == '-':
-            print(subtract(float(first), float(two)))
+        calc()
+
+
+    elif choice != 'MadLibs' or choice != 'Calculator':
         print('')
-        option = input("Want to go again(Yes, No):")
-        if option == 'Yes':
-            program()
-        if option == 'No':
-            print('Have a good day')
-            exit()
+        print('Please choose MadLibs or Calculator')
+        print('')
+        program()
+    option1()
+
+
 program()
